@@ -5,15 +5,21 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 ?
+sum = (x, y) => {
+    return x + y
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 ?
+var sumresult = sum(1,2) + 5 
 
 // Qual o valor atualizado dessa variável?
 ?
+8
 
 // Declare uma nova variável, sem valor.
 ?
+var worthless
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
@@ -21,33 +27,49 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 ?
+addvalue = () => {
+    worthless = "Valor";
+    return "O valor da variável agora é " + worthless
+}
 
 // Invoque a função criada acima.
 ?
+addvalue()
 
 // Qual o retorno da função? (Use comentários de bloco).
 ?
+'O valor da variável agora é Valor'
 
 /*
 Crie uma função com as seguintes características:
-1. A função deve receber 3 argumentos;
+1. A função deve receber 3 argumentos; 
 2. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 ?
+hello = (x, y, z) => {
+    if( x === undefined || y === undefined || z === undefined ) {
+      return 'Preencha todos os valores corretamente!';
+  }
+  return x * y * z + 2;
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
 ?
+hello(3, 4,)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
+'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 ?
+hello(1, 2, 3)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
+8
 
 /*
 Crie uma função com as seguintes características:
@@ -59,7 +81,28 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 ?
+hello1 = (x, y, z) => {
+  if( x !== undefined && y === undefined && z === undefined ) {
+    return x;
+  } else if( x !== undefined && y !== undefined && z === undefined ) {
+      return x + y;
+  } else if( x !== undefined && y !== undefined && z !== undefined ) {
+      return ( x + y ) / z;
+  } else if( x === undefined && y === undefined && z === undefined ) {
+      return false;
+  }
+  else {
+    return null
+  }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
-```
+> hello1(1)
+1
+> hello1(1, 1)
+2
+> hello1(1, 1, 1)
+1
+> hello1()
+false
