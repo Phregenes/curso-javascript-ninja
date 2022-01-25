@@ -110,7 +110,7 @@ Para retornar os valores de marca e modelo, utilize os métodos criados.
 ?
 
 carro.obterMarcaModelo = () => {
-  return 'Esse carro é um' + '' + carro.marca + '' + carro.modelo;
+  return 'Esse carro é um' + ' ' + carro.marca + ' ' + carro.modelo;
 };
 
 /*
@@ -120,8 +120,10 @@ seguintes características:
 número não precisa encher o carro, você poderá acrescentar as pessoas aos
 poucos.
 - O método deve retornar a frase: "Já temos [X] pessoas no carro!"
+
 - Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
 deve retornar a frase: "O carro já está lotado!"
+
 - Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas por
 parâmetro for ultrapassar o limite de assentos do carro, então você deve
 mostrar quantos assentos ainda podem ser ocupados, com a frase:
@@ -130,6 +132,12 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 ?
+
+carro.colocarPessoas = (x) => {
+  carro.quantidadePessoas = x;
+  var ternario = (carro.quantidadePessoas > 5) ? "o carro esta lotado" : "Já temos" + ' ' + carro.quantidadePessoas + ' ' + "pessoas no carro";
+  return ternario;
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
