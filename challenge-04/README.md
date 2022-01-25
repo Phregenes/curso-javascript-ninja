@@ -9,13 +9,34 @@ para o contrário.
 */
 ?
 
+var isTruthy = (x) => {
+  return !!x;
+};
+
+/* para descobrise um valor é truthy ou false utilizamos o !! para poder verificar */
+
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 ?
+
+isTruthy()
+isTruthy(0)
+isTruthy(false)
+isTruthy(-0)
+isTruthy(undefined)
+isTruthy(null)
+isTruthy(NaN)
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 ?
+
+isTruthy(true)
+isTruthy(1)
+isTruthy(-1)
+isTruthy('oi')
+isTruthy({})
+isTruthy([])
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -31,26 +52,55 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 */
 ?
 
+var carro = {
+  marca: 'porsche',
+  modelo: '911',
+  placa: 'pors0911',
+  ano: 2022,
+  cor: 'giz',
+  quantasPortas: 2,
+  assentos: 5,
+  quantidadePessoas: 0,
+};
+
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
 ?
 
+carro.mudarCor = (x) => {
+  carro.cor = x;
+};
+
+/* OBS: para chamar o parametro com o tipo string sempre colocar '' dentro dos () */
+
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 ?
+
+carro.obterCor = () => {
+  return carro.cor;
+};
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 ?
 
+carro.obterModelo = () => {
+  return carro.modelo;
+};
+
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 ?
+
+carro.obterMarca = () => {
+  return carro.marca;
+};
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
@@ -58,6 +108,10 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 ?
+
+carro.obterMarcaModelo = () => {
+  return 'Esse carro é um' + '' + carro.marca + '' + carro.modelo;
+};
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
