@@ -142,7 +142,7 @@ citado acima, no lugar de "pessoas".
 
 carro.adicionarPessoas = (numeroPessoas) => {
   var totalPessoas = carro.quantidadePessoas + numeroPessoas;
-  if( carro.quantidadePessoas === carro.assentos ) {
+  if( carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos ) {
     return 'O carro já está lotado';
   }
 
@@ -192,20 +192,31 @@ carro.obterModelo //porsche
 // Adicione 2 pessoas no carro.
 ?
 
-
+carro.adicionarPessoas(2); //já temos duas duas pessoas no carro
 
 // Adicione mais 4 pessoas no carro.
 ?
 
+carro.adicionarPessoas(4); // só cabem mais 3 pessoas!
+
 // Faça o carro encher.
 ?
+
+carro.adicionarPessoas(3); //já temos 5 pessoas no carro!
 
 // Tire 4 pessoas do carro.
 ?
 
+carro.adicionarPessoas(-4); // já temos uma pessoa no carro!
+
 // Adicione 10 pessoas no carro.
 ?
 
+carro.adicionarPessoas(10); //só cabem mais 4 pessoas no carro!
+
 // Quantas pessoas temos no carro?
 ?
+
+carro.quantidadePessoas // 1
+
 ```
