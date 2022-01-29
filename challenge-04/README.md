@@ -18,6 +18,7 @@ var isTruthy = (x) => {
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 ?
 
+isTruthy('')
 isTruthy()
 isTruthy(0)
 isTruthy(false)
@@ -31,12 +32,17 @@ Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 ?
 
-isTruthy(true)
-isTruthy(1)
-isTruthy(-1)
-isTruthy('oi')
-isTruthy({})
-isTruthy([])
+isTruthy(true);
+isTruthy(1);
+isTruthy(-1);
+isTruthy('oi');
+isTruthy({});
+isTruthy([]);
+isTruthy(10 + 10);
+isTruthy(10 * 10);
+isTruthy([1, 2, 3]);
+isTruthy({ a: 1, b: 4 });
+
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
