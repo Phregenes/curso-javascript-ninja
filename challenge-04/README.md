@@ -66,7 +66,7 @@ var carro = {
   cor: 'giz',
   quantasPortas: 2,
   assentos: 5,
-  quantidadePessoas: 0,
+  quantidadePessoas: 0
 };
 
 /*
@@ -116,7 +116,7 @@ Para retornar os valores de marca e modelo, utilize os métodos criados.
 ?
 
 carro.obterMarcaModelo = () => {
-  return 'Esse carro é um' + ' ' + carro.marca + ' ' + carro.modelo;
+  return 'Esse carro é um' + ' ' + carro.obterMarca + ' ' + carro.obterModelo;
 };
 
 /*
@@ -141,9 +141,8 @@ citado acima, no lugar de "pessoas".
 
 carro.colocarPessoas = (x) => {
   carro.quantidadePessoas = x;
-  var ternario = (carro.quantidadePessoas > 5) ? "o carro esta lotado" : "Já temos" + ' ' + carro.quantidadePessoas + ' ' + "pessoas no carro";
+  var ternario = (carro.quantidadePessoas > 5) ? "o carro esta lotado" : "Já temos" + ' ' + carro.quantidadePessoas + ' ' + "pessoas no carro"; 
   return ternario;
-  
 };
 
 /*
