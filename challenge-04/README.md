@@ -122,6 +122,7 @@ carro.obterMarcaModelo = () => {
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
 seguintes características:
+
 - Ele deverá receber por parâmetro o número de pessoas entrarão no carro. Esse
 número não precisa encher o carro, você poderá acrescentar as pessoas aos
 poucos.
@@ -139,10 +140,20 @@ citado acima, no lugar de "pessoas".
 */
 ?
 
-carro.colocarPessoas = (x) => {
-  carro.quantidadePessoas = x;
-  var ternario = (carro.quantidadePessoas > 5) ? "o carro esta lotado" : "Já temos" + ' ' + carro.quantidadePessoas + ' ' + "pessoas no carro"; 
-  return ternario;
+carro.adicionarPessoas = (numeroPessoas) => {
+  var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+  if( carro.quantidadePessoas === carro.assentos ) {
+    return 'O carro já está lotado';
+  }
+
+  if( totalPessoas > carro.assentos ) {
+    var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+    var pluralOuSingular = quantasPessoasCabem === 1 ? 'pessoa' : 'pessoas'
+    return 'Só cabem mais' + quantasPessoasCabem + pluralOuSingular + '!';
+  }
+
+  carro.quantidadePessoas += numeroPessoas;
+  return "Já temos" + ' ' + carro.quantidadePessoas + ' ' + "pessoas no carro";
 };
 
 /*
