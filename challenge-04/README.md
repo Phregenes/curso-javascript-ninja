@@ -143,6 +143,7 @@ carro.colocarPessoas = (x) => {
   carro.quantidadePessoas = x;
   var ternario = (carro.quantidadePessoas > 5) ? "o carro esta lotado" : "Já temos" + ' ' + carro.quantidadePessoas + ' ' + "pessoas no carro";
   return ternario;
+  
 };
 
 /*
