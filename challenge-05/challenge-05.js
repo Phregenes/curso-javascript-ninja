@@ -4,7 +4,7 @@ Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 */
 // ?
 
-var array = [1, 2, 3, 4, 5];
+var myarray = [10, "Pedro", null, { a: 1 }, function () {}];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
@@ -12,15 +12,15 @@ Crie uma função que receba um array como parâmetro, e retorne esse array.
 // ?
 
 funcArray = (array) => {
-    return array;
-}
+  return array;
+};
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 // ?
 
-array[1];
+console.log9(funcArray(myarray)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -30,16 +30,16 @@ segundo parâmetro.
 */
 // ?
 
-funcParm = ( x, y ) => {
-    return x[y];
-}
+funcParm = (x, y) => {
+  return x[y];
+};
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
 // ?
 
-var arrayX = [1, 'a', true, null, undefined];
+var arrayX = [1, "a", true, null, undefined, { b: 2 }];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
@@ -47,7 +47,11 @@ array criado.
 */
 // ?
 
-arrayX;
+console.log(funcParm(arrayX, 0));
+console.log(funcParm(arrayX, 1));
+console.log(funcParm(arrayX, 2));
+console.log(funcParm(arrayX, 3));
+console.log(funcParm(arrayX, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -66,18 +70,25 @@ os livros.
 // ?
 
 book = (nome) => {
-    var livro = {
-        nome: nome,
-        quantidadePaginas: 100,
-        autor: 'Pedro',
-        editora: 'Editora'
-    }
-    if(nome) {
-        return livro;
-    } else {
-        return livro;
-    }
-}
+  var AllBooks = {
+    livro1: {
+      quantidadePaginas: 100,
+      autor: "Pedro",
+      editora: "Editora",
+    },
+    livro2: {
+      quantidadePaginas: 200,
+      autor: "Pedro",
+      editora: "Editora",
+    },
+    livro3: {
+      quantidadePaginas: 300,
+      autor: "Pedro",
+      editora: "Editora",
+    },
+  };
+  return !nome ? AllBooks : AllBooks[nome];
+};
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
