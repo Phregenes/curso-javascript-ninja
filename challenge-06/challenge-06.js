@@ -40,18 +40,22 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 // ?
 
 showTeamPosition() = (nan) => {
-  if(teams[nan] === undefined) {
-    return "O time que está em" + (nan) + "º lugar é o" + teams[nan] + "."
+  if(teams[nan] < 1 || nan > 5 ) {
+    return "O time que está em" + (nan) + "º lugar é o" + teams[ nan - 1 ] + "."
   } else {
-    "Não temos a informação do time que está nessa posição."
-  }
+    return "O time que está em" + (nan) + "º lugar é o" + teams[ nan - 1 ] + "."
+  }}
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 // ?
-
+console.log(showTeamPosition( 1 ))
+console.log(showTeamPosition( 2 ))
+console.log(showTeamPosition( 3 ))
+console.log(showTeamPosition( 4 ))
+console.log(showTeamPosition( 8 ))
 
 
 /*
@@ -60,10 +64,9 @@ repetição "while".
 */
 // ?
 
-var counter = 30
-while(counter > 30) {
-  console.log( counter )
-  return counter++;
+var counter = 20
+while(counter <= 30) {
+  console.log( counter++ );
 }
 
 /*
@@ -80,15 +83,34 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 // ?
 
-convertToHex() = (color) => {
-
+convertToHex() = ( color ) => {
+  var hexa ;
+  switch( color ) {
+    case 'red':
+      hexa = '#FF0000.'
+      break;
+    case 'blue':
+      hexa = '#FF0000.'
+      break;
+    case 'green':
+      hexa = '#FF0000.'
+      break;
+    case 'yellow':
+      hexa = '#FF0000.'
+      break;
+    case 'cyan':
+      hexa = '#FF0000.'
+      break;
+    default:
+      return 'Não temos o equivalente hexadecimal para' + color + '.';
+  }
+  return 'O hexadecimal para a cor' + color + 'é' + hexa + '.';
 }
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
 // ?
-
-convertToHex() = (color) => {
-
-}
+console.log(convertToHex('red'));
+console.log(convertToHex('blue'));
+console.log(convertToHex('cyan'));
