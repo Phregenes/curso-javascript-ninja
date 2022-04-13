@@ -96,4 +96,3 @@ console.log( 'Números ímpares entre 111 e 125:' );
 for (var counter = 111; counter <= 125; counter++) {
   counter % 2 !== 0 ? console.log( counter ) : '';
 }
-
