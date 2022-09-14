@@ -1,3 +1,4 @@
+(function() {
 /*
 Envolva todo o código desse desafio em uma IIFE.
 */
@@ -10,14 +11,26 @@ Os números devem ser de 1 a 10.
 Mostre esse array no console.
 */
 console.log( 'Number Objects Array:' );
-// ?
+
+let numberObjects = []
+
+for(var i = 0; i <= 10; i++) {
+  numberObjects.push({number : i})
+}
+
+console.log( 'Number Objects', numberObjects)
 
 /*
 Crie um array chamado `justNumbers`, que terá como elementos somente os
 números do array criado acima. Mostre esse novo array no console.
 */
 console.log( '\nJust Numbers:' );
-// ?
+
+const justNumbers = numberObjects.map(function (item) {
+  return item.number
+})
+
+console.log("item", justNumbers)
 
 /*
 Crie um novo array chamado `justMod2Or3`, que receberá do array criado acima
@@ -25,7 +38,12 @@ somente os números que forem divisíveis por 2 ou 3. Mostre esse novo array
 no console.
 */
 console.log( '\nJust module of division by 2 or 3:' );
-// ?
+
+let justMod2Or3 = justNumbers.filter( function(item) {
+  return item % 2 || 3 === 0;
+})
+
+console.log("justMod2Or3", justMod2Or3)
 
 /*
 Declare uma variável chamada operation que receba, do array criado acima,
@@ -36,7 +54,12 @@ O cálculo deve começar com zero.
 Mostre o resultado no console.
 */
 console.log( '\nOperation:' );
-// ?
+
+var operation = justMod2Or3.reduce( function(item){
+  return item +1
+})
+
+console.log("operation",operation )
 
 /*
 Faça o mesmo cálculo passado acima, mas começando do último item para o
@@ -95,3 +118,4 @@ formato de String.
 */
 console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
 // ?
+})()

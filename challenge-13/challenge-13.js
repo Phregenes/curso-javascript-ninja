@@ -140,15 +140,10 @@ Senão, mostre no console:
 - "Nem todos os estados tem mais de 7 letras!"
 */
 console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-numberState = []
-brasil.forEach(function(item) {
-  numberState.push(item.length)
-})
 
-numberState.every(function(item){
-  if(item > 7) {
-    console.log("Sim, todos os estados tem mais de 7 letras!")
-  } console.log("Nem todos os estados tem mais de 7 letras!")
+brasil.every(function(item){
+  var condicion = item.length > 7
+  console.log(condicion ? "Sim, todos os estados tem mais de 7 letras!" : "Nem todos os estados tem mais de 7 letras!")
 })
 
 /*
@@ -160,7 +155,11 @@ Senão, mostrar a frase:
 - "Ceará não foi incluído :("
 */
 console.log( '\nCeará está incluído em `brasil`?' );
-// ?
+
+var some = brasil.some(function(item) {
+  return item === 'Ceará';
+});
+console.log(some ? "Ceará está incluído!" : "Ceará não foi incluído :(")
 
 /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -168,7 +167,14 @@ objeto desse array, e adicione a frase abaixo na propriedade `estado`:
 - "[ESTADO] pertence ao Brasil."
 Atribua o novo array a uma variável chamada `map`.
 */
-// ?
+
+var map = brasil.map(function (item, index) {
+  return {
+    id: index + 1,
+    Estado: item.estado += ' pertence ao Brasil'
+  }
+})
+console.log(map)
 
 /*
 Mostre no console o array criado acima:
@@ -180,11 +186,14 @@ console.log( '\nnewBrasil agora com mais informações:' );
 Filtre o array criado acima, retornando somente os estados que tiverem
 ID par. Atribua o valor à uma variável chamada `filter`.
 */
-// ?
+
+var filter = map.filter(function(item){
+  return item.id % 2 === 0;
+})
 
 /*
 Mostre o array filtrado acima no console.
 */
 console.log( '\nEstados com ID par:' );
-// ?
+console.log(filter)
 })()
